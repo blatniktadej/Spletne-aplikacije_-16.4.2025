@@ -4,14 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Računalniške storitve</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <ul>
-        <li><a href="index.html">Domov</a></li>
-        <li><a href="O nas.html">O nas</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-    <p>Tukaj bodo nekoč stali izdelki</p>
+    <!--Navigacijska vrstica-->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Računalniške storitve</a>  
+            <button class="navbar-toggler fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>    
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="storitve.html" class="nav-link">Storitve</a></li>
+                    <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+  
+    <section class="container">
+        <div class="row" id="storitev-lista">
+            <!--Tukaj bodo nekoč stali izdelki s pomočjo PHP-ja-->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="Slike/pexels-divinetechygirl-1181210.jpg" class="card-img-top" alt="Naziv storitve" srcset="">
+                    <div class="card-body">
+                        <h5 class="card-title">Programiranje</h5>
+                        <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic enim ratione quibusdam aperiam veniam placeat odit similique quos, nostrum vel temporibus ut aliquid, aspernatur maxime! Veniam nulla veritatis quis modi?</p>
+                        <a href="#" class="btn btn-dark">Več</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
 </body>
 </html>

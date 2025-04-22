@@ -6,78 +6,20 @@
     <title>Računalniške storitve</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    <style>
-        section
-        {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-        .carousel-container
-        {
-            width: 90% ;
-            margin: 0 auto ;
-        }
-        .carousel-item img
-        {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            filter: brightness(85%);
-            transition: filter 0.3s ease;
-
-        }
-        .carousel-item img:hover
-        {
-            filter: brightness(100%)
-        }
-        .carousel-caption
-        {
-            background-color: rgba(0,0,0,0.5);
-            padding: 1rem;
-            border-radius: 10px;
-        }
-        .btn-dark
-        {
-            margin-top: 20px;
-        }
-        .team-member, .news-item
-        {
-            margin-bottom: 30px;
-        }
-        .news-item img
-        {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .news-item h4
-        {
-            margin-top: 10px;
-        }
-        .news-item p {
-        max-height: 120px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        text-align: center;
-    }
-
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!--Navigacijska vrstica-->
     <nav class="navbar navbar-expand-lg bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Računalniške storitve</a>  
-
-            <div class="collapse navbar-collapse">
+            <button class="navbar-toggler fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>    
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a href="storitve.html" class="nav-link">Storitve</a></li>
-                    <li class="nav-item"><a href="onas.html" class="nav-link">O nas</a></li>
                     <li class="nav-item"><a href="kontak.html" class="nav-link">Kontakt</a></li>
                 </ul>
       </div>
@@ -155,25 +97,25 @@
       <section class="container">
         <h2 class="text-center">Novice</h2>
         <div class="row">
-            <div class="col-md-3 news-item">
+            <div class="col-md-6 col-lg-4 col-xl-3 news-item">
                 <img src="Slike/Novice/pexels-goumbik-590016.jpg" alt="">
                 <h4>Novica 1</h4>
                 <p style="height: 150px;">Naša najnovejša storitev za zaščito osebnih podatkov je sedaj na voljo!</p>
                 <button class="btn btn-dark">Preberi več</button>
             </div>
-            <div class="col-md-3 news-item">
+            <div class="col-md-6 col-lg-4 col-xl-3 news-item">
                 <img src="Slike/Novice/pexels-asphotograpy-95916.jpg" alt="">
                 <h4>Novica 2</h4>
                 <p style="height: 150px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus omnis esse doloribus ullam libero vero tempora distinctio fuga totam blanditiis corrupti odio ducimus dignissimos sed suscipit ratione, sint impedit. Quibusdam.</p>
                 <button class="btn btn-dark">Preberi več</button>
             </div>
-            <div class="col-md-3 news-item">
+            <div class="col-md-6 col-lg-4 col-xl-3 news-item">
                 <img src="Slike/Novice/pexels-divinetechygirl-1181346.jpg" alt="">
                 <h4>Novica 3</h4>
                 <p style="height: 150px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolores, officia iste accusamus fuga expedita numquam cumque illum sint odit ut a tempore ipsa! Architecto molestias explicabo dolores placeat in?</p>
                 <button class="btn btn-dark">Preberi več</button>
             </div>
-            <div class="col-md-3 news-item">
+            <div class="col-md-6 col-lg-4 col-xl-3 news-item">
                 <img src="Slike/Novice/pexels-pixabay-267350.jpg" alt="">
                 <h4>Novica 4</h4>
                 <p style="height: 150px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, illo reiciendis enim odit molestiae amet, consequuntur error fuga laudantium doloribus quia dignissimos magnam labore quam voluptates esse exercitationem, tempore vel.</p>
@@ -191,11 +133,19 @@
 
       </footer>
 
+      <script>
+        const navLinks=document.querySelectorAll('.nav-link');
+        const navCollapse=document.getElementById('navbarNav');
+        navLinks.forEach(link=>{
+            link.addEventListener('click', () =>{
+            if(window.getComputedStyle(document.querySelector('.navbar-toggler')).display!=='none'){
+                new bootstrap.Collapse(navCollapse).hide();
+
+            }
+        });
+    });
 
 
-
-
-
-
+      </script>
 </body>
 </html>

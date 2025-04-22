@@ -1,0 +1,55 @@
+section
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.carousel-container
+{
+    width: 90% ;
+    margin: 0 auto ;
+}
+.carousel-item img
+{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: brightness(85%);
+    transition: filter 0.3s ease;
+
+}
+.carousel-item img:hover
+{
+    filter: brightness(100%)
+}
+.carousel-caption
+{
+    background-color: rgba(0,0,0,0.5);
+    padding: 1rem;
+    border-radius: 10px;
+}
+.btn-dark
+{
+    margin-top: 20px;
+}
+.team-member, .news-item
+{
+    margin-bottom: 30px;
+}
+.news-item img
+{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.news-item h4
+{
+    margin-top: 10px;
+}
+.news-item p {
+max-height: 120px;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+text-align: center;
+}
