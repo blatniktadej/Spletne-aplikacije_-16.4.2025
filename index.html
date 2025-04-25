@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a href="storitve.html" class="nav-link">Storitve</a></li>
-                    <li class="nav-item"><a href="kontak.html" class="nav-link">Kontakt</a></li>
+                    <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
                 </ul>
       </div>
     </div>
@@ -33,7 +33,7 @@
         <h2>
             V primeru, da želite prejemati novice opravite registracijo.
         </h2>
-        <input class="btn btn-dark" type="text" value="Oglej si naše storitve">
+        <button class="btn btn-dark" type="button" value="">Oglejte si naše storitve!</button>
 
       </section>
     
@@ -101,8 +101,9 @@
                 <img src="Slike/Novice/pexels-goumbik-590016.jpg" alt="">
                 <h4>Novica 1</h4>
                 <p style="height: 150px;">Naša najnovejša storitev za zaščito osebnih podatkov je sedaj na voljo!</p>
-                <button class="btn btn-dark">Preberi več</button>
-            </div>
+                <button class="btn btn-dark read-more-btn" data-id="1">Preberi več</button>
+              </div>
+              
             <div class="col-md-6 col-lg-4 col-xl-3 news-item">
                 <img src="Slike/Novice/pexels-asphotograpy-95916.jpg" alt="">
                 <h4>Novica 2</h4>
@@ -124,7 +125,21 @@
 
 
         </div>
-
+<!-- Modal za prikaz novice -->
+<div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newsModalLabel">Naslov novice</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zapri"></button>
+        </div>
+        <div class="modal-body">
+          <p id="newsModalContent">Vsebina novice...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
       </section>
 
       <footer class="bg-dark text-white p-4">
@@ -144,6 +159,30 @@
             }
         });
     });
+    
+  const newsData = {
+    1: {
+      title: "Novica 1",
+      content: "Naša najnovejša storitev za zaščito osebnih podatkov je sedaj na voljo! Ta storitev vključuje šifriranje, arhiviranje in varnostno kopiranje občutljivih podatkov v realnem času..."
+    },
+    // Lahko dodaš še več novic z ID-ji: 2, 3, ...
+  };
+
+  document.querySelectorAll('.read-more-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const newsId = button.getAttribute('data-id');
+      const modal = new bootstrap.Modal(document.getElementById('newsModal'));
+      const news = newsData[newsId];
+
+      // Napolni modal z vsebino novice
+      document.getElementById('newsModalLabel').textContent = news.title;
+      document.getElementById('newsModalContent').textContent = news.content;
+
+      modal.show();
+    });
+  });
+
+
 
 
       </script>
